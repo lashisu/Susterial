@@ -1,0 +1,17 @@
+﻿{
+  "sProcessing": "กำลังดำเนินการ...",
+  "sLengthMenu": "แสดง _MENU_ แถว",
+  "sZeroRecords": "ไม่พบข้อมูล",
+  "sInfo": "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
+  "sInfoEmpty": "แสดง 0 ถึง 0 จาก 0 แถว",
+  "sInfoFiltered": "(กรองข้อมูล _MAX_ ทุกแถว)",
+  "sInfoPostFix": "",
+  "sSearch": "ค้นหา: ",
+  "oPaginate": {
+    "sFirst": "<i class=\"fas fa-angle-double-left paginateIcon\"></i>",
+    "sLast": "<i class=\"fas fa-angle-double-right paginateIcon\"></i>",
+    "sNext": "<i class=\"fas fa-angle-right paginateIcon\"></i>",
+    "sPrevious": "<i class=\"fas fa-angle-left paginateIcon\"></i>"
+  },
+  "sUrl": ""
+}

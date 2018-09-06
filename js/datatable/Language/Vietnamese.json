@@ -1,0 +1,17 @@
+﻿{
+  "sProcessing": "Đang xử lý...",
+  "sLengthMenu": "Xem _MENU_ mục",
+  "sZeroRecords": "Không tìm thấy dòng nào phù hợp",
+  "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
+  "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
+  "sInfoFiltered": "(được lọc từ _MAX_ mục)",
+  "sInfoPostFix": "",
+  "sSearch": "Tìm:",
+  "oPaginate": {
+    "sFirst": "<i class=\"fas fa-angle-double-left paginateIcon\"></i>",
+    "sLast": "<i class=\"fas fa-angle-double-right paginateIcon\"></i>",
+    "sNext": "<i class=\"fas fa-angle-right paginateIcon\"></i>",
+    "sPrevious": "<i class=\"fas fa-angle-left paginateIcon\"></i>"
+  },
+  "sUrl": ""
+}

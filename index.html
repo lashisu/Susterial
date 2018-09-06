@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Chilindo Finance</title>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="green" data-background-color="black">
+            <div class="logo">
+                <a routerLink="/" class="simple-text logo-mini"></a>
+                <a routerLink="/" class="simple-text logo-normal">
+                    Chilindo
+                    <span class="productName">Finance</span>
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <div class="user">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <div class="photo">
+                                <img src="https://graph.facebook.com/10156764294861941/picture?type=large">
+                            </div>
+                            <div class="user-info">
+                                <a class="username">
+                                    <span>
+                                        Welcome Sushil Gupta
+                                    </span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a routerLink="/" class="nav-link">
+                            <i class="mdi mdi-view-dashboard-outline"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" data-toggle="collapse" href="#UserList" aria-expanded="true">
+                            <i class="mdi mdi-account-multiple-outline"></i>
+                            <p>
+                                User Management
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse show" id="UserList">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <span class="sidebar-mini"> AU </span>
+                                        <span class="sidebar-normal"> All Users </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="#" class="nav-link">
+                                        <span class="sidebar-mini"> AU </span>
+                                        <span class="sidebar-normal"> Add User </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top" id="PageTop">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-minimize">
+                            <button id="SidebarMini" class="btn btn-just-icon btn-white btn-fab btn-round">
+                                <i class="mdi mdi-dots-vertical visible-on-sidebar-regular"></i>
+                                <i class="mdi mdi-view-headline visible-on-sidebar-mini"></i>
+                            </button>
+                        </div>
+                        <div class="logo d-block d-lg-none">
+                            <a href="/CustomerService/Index" class="simple-text logo-mini"></a>
+                            <a href="/CustomerService/Index" class="simple-text logo-normal">Chilindo</a>
+                        </div>
+                        <span class="PageTitle d-none d-lg-block" id="PageTitle">Dashboard</span>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false"
+                        aria-label="Toggle navigation" data-target="#PageTop">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                    </button>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                Complex Form
+                            </h4>
+                        </div>
+                        <form autocomplete="off">
+                            <div class="card-body">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Password</label>
+                                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress">Address</label>
+                                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Address 2</label>
+                                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputCity">City</label>
+                                        <input type="text" class="form-control" id="inputCity">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">State</label>
+                                        <select id="inputState" class="form-control">
+                                            <option selected>Choose...</option>
+                                            <option>...</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="inputZip">Zip</label>
+                                        <input type="text" class="form-control" id="inputZip">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value=""> Option one is this
+                                            <span class="form-check-sign">
+                                                <span class="check"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer justify-content-center">
+                                <button type="submit" class="btn btn-success btn-round btn-md" name="signup">Sign up</button>
+                                <button type="button" class="btn btn-primary btn-round btn-md">Submit</button>
+                                <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger btn-round btn-md">Open
+                                    Modal
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                Inline Form
+                            </h4>
+                        </div>
+                        <form autocomplete="off">
+                            <div class="card-body form-inline">
+                                <div class="form-group mb-2">
+                                    <label for="staticEmail2" class="sr-only">Email</label>
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+                                </div>
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <label for="inputPassword2" class="sr-only">Password</label>
+                                    <input type="text" class="form-control" id="inputPassword2" placeholder="Password" autocomplete="off">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-round btn-md mb-2">Confirm identity</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                Form controls
+                            </h4>
+                        </div>
+                        <form>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Email</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" readonly class="form-control-plaintext" value="email@example.com">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Email</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" readonly class="form-control-plaintext" value="email@example.com">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Password</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" placeholder="Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Password</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" placeholder="Password" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer justify-content-center">
+                                <button type="button" class="btn btn-primary btn-round btn-md">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                Form controls
+                            </h4>
+                        </div>
+                        <form>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="mdi mdi-account-group"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="With Font Awesome Icons">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="With Font Awesome Icons">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="mdi mdi-account-group"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Example select</label>
+                                    <select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect2">Example multiple select</label>
+                                    <select multiple class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect2">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="card-footer justify-content-center">
+                                <button type="button" class="btn btn-primary btn-round btn-md">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                Normal Form
+                            </h4>
+                        </div>
+                        <form>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                        anyone else.
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value=""> Option one is this
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="card-footer justify-content-center">
+                                <button type="button" class="btn btn-primary btn-round btn-md">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <form id="signupForm" method="post" action="">
+                            <div class="card-body">
+                                <div class="row mt-20">
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="firstname">First name</label>
+                                            <input type="text" class="form-control" placeholder="Enter your first name..." id="firstname" name="firstname" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="lastname">Last name</label>
+                                            <input type="text" class="form-control" placeholder="Enter your last name..." id="lastname" name="lastname" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="username">Username</label>
+                                            <input type="text" class="form-control" id="username" name="username" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-20">
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="text" class="form-control" id="email" name="email" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" id="password" name="password" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="confirm_password">Confirm Email</label>
+                                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-20">
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="checkbox" id="agree" name="agree" value="agree">                                                    Please
+                                                    agree to our policy
+                                                    <span class="form-check-sign">
+                                                        <span class="check"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer justify-content-center">
+                                <button type="submit" class="btn btn-success btn-round btn-md" name="signup">Sign up</button>
+                                <button type="button" class="btn btn-primary btn-round btn-md">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                Regular header with collapse icon
+                                <button data-toggle-src=".card1" data-multi="true" class="btn btn-just-icon btn-round card-toggle">
+                                    <i class="mdi mdi-chevron-up"></i>
+                                </button>
+                            </h4>
+                        </div>
+                        <div class="card1">
+                            <div class="card-body">
+                                <form id="user-search-form">
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <div class="form-group mat-form-group is-filled" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label class="label-floating">Name</label>
+                                                <input class="form-control" value="Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md">
+                                            <div class="form-group mat-form-group is-filled" data-container="body" data-trigger="focus" data-toggle="popover" data-placement="top"
+                                                data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                                <label class="label-floating">Email</label>
+                                                <input class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md">
+                                            <div class="form-group is-filled">
+                                                <label for="auction_id"> Auction ID </label>
+                                                <div>
+                                                    <select class="selectpicker form-control" data-style="btn-select">
+                                                        <option>Mustard</option>
+                                                        <option>Ketchup</option>
+                                                        <option>Relish</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <div class="form-group is-filled">
+                                                <label for="auction_id"> Checkbox </label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value=""> Option
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md">
+                                            <div class="form-group is-filled">
+                                                <label for="auction_id"> Checkbox </label>
+                                                <div>
+                                                    <div class="form-check form-check-radio form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">                                                            1
+                                                            <span class="circle">
+                                                                <span class="check"></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-radio form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">                                                            2
+                                                            <span class="circle">
+                                                                <span class="check"></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-radio form-check-inline disabled">
+                                                        <label class="form-check-label">
+                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>                                                            3
+                                                            <span class="circle">
+                                                                <span class="check"></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md">
+                                            <div class="form-group is-filled">
+                                                <label class="bmd-label-floating">Switch</label>
+                                                <div>
+                                                    <span class="switcher">
+                                                        <label><input type="checkbox" id="Name" checked="checked"> Sushil</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-20">
+                                        <div class="col-md">
+                                            <div class="form-group">
+                                                <label for="txtArea">Name</label>
+                                                <textarea class="form-control" rows="4" id="txtArea1">asasasasas ssdssd asasass asasas Enter Username & Password together separated by space. ssdssd asasass asasas Enter Username & Password together separated by space. ssdssd asasass asasas Enter Username & Password together separated by space. ssdssd asasass asasas Enter Username & Password together separated by space. ssdssd asasass asasas Enter Username & Password together separated by space. ssdssd asasass asasas Enter Username & Password together separated by space. ssdssd asasass asasas Enter Username</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer justify-content-center">
+                                <button type="button" class="btn btn-primary btn-round btn-md">Primary</button>
+                                <button type="button" class="btn btn-info btn-round btn-md">Info</button>
+                                <button type="button" class="btn btn-success btn-round btn-md">Success</button>
+                                <button type="button" class="btn btn-danger btn-round btn-md">Danger</button>
+                                <button type="button" class="btn btn-warning btn-round btn-md">Warning</button>
+                                <button type="button" class="btn btn-default btn-round btn-md">Default</button>
+                                <button type="button" class="btn btn-white btn-round btn-md">White</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                Alert Block
+                                <button data-toggle-src="#card101" data-multi="true" class="btn btn-just-icon btn-round card-toggle">
+                                    <i class="mdi mdi-chevron-up"></i>
+                                </button>
+                            </h4>
+                        </div>
+                        <div class="card-body" id="card101">
+                            <div class="bd-callout bd-callout-info">
+                                <p>The base
+                                    <code class="highlighter-rouge">.nav</code> component does not include any
+                                    <code class="highlighter-rouge">.active</code> state. The following examples include
+                                    the class, mainly to demonstrate that this particular class does not trigger any special
+                                    styling.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer justify-content-center">
+                            <button type="button" class="btn btn-white btn-round btn-sm">Cancel</button>
+                            <button type="button" (click)="Notify()" class="btn btn-primary btn-round btn-sm">Submit</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                Regular header with collapse icon
+                                <button data-toggle-src="#card10" data-multi="true" class="btn btn-just-icon btn-round card-toggle">
+                                    <i class="mdi mdi-chevron-up"></i>
+                                </button>
+                            </h4>
+                        </div>
+                        <div class="card-body" id="card10">
+                            <h3>Component will be used here are : -</h3>
+                            <ul>
+                                <li class="text-success">Form Validation</li>
+                                <li class="text-success">Moment Picker</li>
+                                <li class="text-success">Datepicker</li>
+                                <li class="text-success">Bootstrap Select</li>
+                                <li class="text-success">Select 2</li>
+                                <li class="text-success">Data Table</li>
+                                <li class="text-success">Text Area Auto Resizer</li>
+                                <li class="text-success">New Loader</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer justify-content-center">
+                            <button type="button" class="btn btn-white btn-round btn-sm">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-round btn-sm">Submit</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-auto mr-auto">
+                                    <h4 class="card-title">List</h4>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-success btn-round btn-sm">Small</button>
+                                    <button type="button" class="btn btn-danger btn-round btn-sm">Small</button>
+                                    <button type="button" class="btn btn-warning btn-round btn-sm">Small</button>
+                                    <button type="button" class="btn btn-info btn-round btn-sm">Small</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-table" id="card1111">
+                            <div class="TableFilter" style="padding: 0 15px;">
+                                <div class="row mt-20">
+                                    <div class="col-md">
+                                        <div class="form-group is-filled">
+                                            <label for="CountryList">Country</label>
+                                            <div>
+                                                <select class="form-control select2" placeholder="Pick na bhai" id="CountryList" name="CountryList">
+                                                    <option value="AF">Afghanistan</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-group is-filled">
+                                            <label>Select Data</label>
+                                            <input class="form-control date">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm" id="AngTable">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Name</th>
+                                            <th>Job Position</th>
+                                            <th>Since</th>
+                                            <th class="text-right">Salary</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td>John Doe</td>
+                                            <td>Design</td>
+                                            <td>2012</td>
+                                            <td class="text-right">&euro; 89,241</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" class="btn btn-primary btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-account"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-success btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-account"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-pencil"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td>John Doe</td>
+                                            <td>Design</td>
+                                            <td>2012</td>
+                                            <td class="text-right">&euro; 89,241</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" class="btn btn-primary btn-fab btn-round btn-link">
+                                                    <i class="mdi mdi-account"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-success btn-fab btn-round btn-link">
+                                                    <i class="mdi mdi-account"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-fab btn-round btn-link">
+                                                    <i class="mdi mdi-pencil"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td>John Doe</td>
+                                            <td>Design</td>
+                                            <td>2012</td>
+                                            <td class="text-right">&euro; 89,241</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" class="btn btn-primary btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-account"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-success btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-account"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-pencil"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td>John Doe</td>
+                                            <td>Design</td>
+                                            <td>2012</td>
+                                            <td class="text-right">&euro; 89,241</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" class="btn btn-primary btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-account"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-info btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-account"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-success btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-pencil"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-account"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-warning btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-account"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-default btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-pencil"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td>John Doe</td>
+                                            <td>Design</td>
+                                            <td>2012</td>
+                                            <td class="text-right">&euro; 89,241</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" class="btn btn-primary btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-account"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-success btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-account"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-fab btn-fab-mini btn-round btn-link">
+                                                    <i class="mdi mdi-pencil"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="swal2-icon swal2-warning">!</div>
+                    <div class="swal2-icon swal2-question">?</div>
+                    <div class="swal2-icon swal2-info">i</div>
+                    <div class="swal2-icon swal2-error">
+                        <span class="x-mark">
+                            <span class="line left"></span>
+                            <span class="line right"></span>
+                        </span>
+                    </div>
+                    <div class="swal2-icon swal2-success">
+                        <span class="line tip"></span>
+                        <span class="line long"></span>
+                        <div class="placeholder"></div>
+                        <div class="fix"></div>
+                    </div>
+                    <h2 class="swal2-head text-center">Work Done</h2>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-white btn-round" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-success btn-round">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="js/moment/moment-with-locales.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#inputPassword4').datetimepicker();
+        });
+    </script>
+</body>
+</html>

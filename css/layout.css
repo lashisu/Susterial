@@ -537,7 +537,8 @@ body {
 .navbar.navbar-transparent {
     background-color: transparent!important;
     box-shadow: none;
-    padding:.5rem 0
+    padding:.5rem 0;
+    height:auto!important;
 }
 
 .navbar.navbar-absolute {
@@ -1600,7 +1601,6 @@ body {
         float:none;
         display:block
     }
-
 
     .off-canvas-sidebar nav .navbar-collapse{
         margin:0

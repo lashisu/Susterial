@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    bootSusterial();
+
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     });
@@ -87,3 +89,13 @@ $(document).ready(function () {
         }
     });
 });
+
+function bootSusterial() {
+    $(".form-control").each(function () {
+        if ($(this).val() != "") {
+            $(this).parents(".form-group").addClass("is-filled");
+        } else {
+            $(this).parents(".form-group").removeClass("is-filled");
+        }
+    });
+}

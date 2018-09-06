@@ -843,7 +843,7 @@ body {
     padding: 0;
 }
 
-.sidebar-mini .sidebar:hover .sidebar-wrapper .nav-item .nav-link + div {
+.nav-open .sidebar-mini .sidebar .sidebar-wrapper .nav-item .nav-link + div, .sidebar-mini .sidebar:hover .sidebar-wrapper .nav-item .nav-link + div {
     padding: 0 0 0 25px;
 }
 

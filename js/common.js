@@ -25,6 +25,7 @@ $(document).ready(function () {
         $('.swal2-warning').show().removeClass('pulse-warning');
     });
 
+
     $(document).on('click', '.navbar-toggler', function () {
         if ($(this).hasClass('toggled')) {
             $('html').removeClass('nav-open');
@@ -64,7 +65,16 @@ $(document).ready(function () {
         }
     });
 
-
+    $(document).on("focus", ".form-control", function () {
+        $(this).parents(".form-group").addClass("is-focused");
+    }).on("blur", ".form-control", function () {
+        $(this).parents(".form-group").removeClass("is-focused");
+        if ($(this).val() != "") {
+            $(this).parents(".form-group").addClass("is-filled");
+        } else {
+            $(this).parents(".form-group").removeClass("is-filled");
+        }
+    });
 
     $(document).on('click', '[data-toggle-src]', function (e) {
         e.preventDefault();

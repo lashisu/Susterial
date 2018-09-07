@@ -8,7 +8,90 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/layout.css">
+    <style>
+        ul.menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .bottomsheet {
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.85);
+            opacity: 0;
+            transition: all 450ms ease-in-out;
+            z-index: 9999;
+        }
+        .bottomsheet.show {
+            display: block;
+            position: fixed;
+            top: 0;
+            opacity: 1;
+        }
+
+        .bottomsheet .social {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 8px 24px 16px;
+            box-sizing: border-box;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.22), 0px 14px 56px rgba(0, 0, 0, 0.25);
+            -webkit-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+            transition: all 450ms cubic-bezier(0.32, 1, 0.23, 1) 100ms;
+            max-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        .bottomsheet.show .social {
+            -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+            z-index: 9;
+        }
+
+        @media screen and (min-width: 640px) {
+            .bottomsheet {
+                padding: 0 19%;
+            }
+            .bottomsheet .social {
+                max-width: 62%;
+                margin: 0 auto;
+            }
+        }
+        @media screen and (min-width: 960px) {
+            .bottomsheet {
+                padding: 0 23.5%;
+            }
+            .bottomsheet .social {
+                min-width: 384px;
+                max-width: 50%;
+            }
+        }
+        @media screen and (min-width: 1280px) {
+            .bottomsheet {
+                padding: 0 26%;
+            }
+            .bottomsheet .social {
+                min-width: 512px;
+                max-width: 48%;
+            }
+        }
+        @media screen and (min-width: 1440px) {
+            .bottomsheet {
+                padding: 0 28%;
+            }
+            .bottomsheet .social {
+                min-width: 576px;
+                max-width: 44%;
+            }
+        }
+    </style>
 </head>
 
 <body data-color="info">
@@ -90,8 +173,8 @@
                         </div>
                         <span class="PageTitle d-none d-lg-block" id="PageTitle">Dashboard</span>
                     </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false"
-                        aria-label="Toggle navigation" data-target="#PageTop">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+                        aria-expanded="false" aria-label="Toggle navigation" data-target="#PageTop">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="navbar-toggler-icon icon-bar"></span>
                         <span class="navbar-toggler-icon icon-bar"></span>
@@ -102,6 +185,9 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="card">
+                        <a data-toggle="bottomsheet" data-target="#bottom-sheet">Sushil Kumar</a>
+                    </div>
+                    <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Form Control, Calendar, Bootstrap Select, Select 2</h4>
                         </div>
@@ -109,44 +195,32 @@
                             <form>
                                 <div class="row">
                                     <div class="col-md">
-                                        <div class="form-group mat-form-group" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                        <div class="form-group mat-form-group is-filled">
+                                            <label class="label-floating">Date</label>
+                                            <input class="form-control-plaintext" value="Sushil Kumar Gupta" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-group mat-form-group" data-toggle="tooltip" data-placement="top"
+                                            title="Tooltip on top">
                                             <label class="label-floating">Date</label>
                                             <input class="form-control" id="inputPassword4" required>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md">
-                                        <div class="form-group mat-form-group" data-container="body" data-trigger="focus" data-toggle="popover" data-placement="top"
-                                            data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                        <div class="form-group mat-form-group" data-container="body" data-trigger="focus"
+                                            data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
                                             <label class="label-floating">Email</label>
                                             <input class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md">
-                                        <div class="form-group mat-form-group is-filled">
-                                            <label class="label-floating">Email</label>
-                                            <div>
-                                                <select id="single" data-placeholder="Select an option..." data-allow-clear="true" style="width:100%">
-                                                    <option></option>
-                                                    <option value="AK">Alaska</option>
-                                                    <option value="HI" disabled="disabled">Hawaii</option>
-                                                    <option value="CA">California</option>
-                                                    <option value="NV">Nevada</option>
-                                                    <option value="OR">Oregon</option>
-                                                    <option value="WA">Washington</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="form-group">
-                                            <label for="auction_id"> Auction ID </label>
-                                            <div>
-                                                <select class="selectpicker show-tick" data-size="5" data-style="btn-select" title="Select One...">
-                                                    <option>Mustard</option>
-                                                    <option>Ketchup</option>
-                                                    <option>Relish</option>
-                                                </select>
-                                            </div>
+                                        <div class="form-group mat-form-group" data-toggle="tooltip" data-placement="top"
+                                            title="Tooltip on top">
+                                            <label class="label-floating">Date</label>
+                                            <input class="form-control" id="inputPassword4" required>
                                         </div>
                                     </div>
                                 </div>
@@ -170,7 +244,8 @@
                                             <div>
                                                 <div class="form-check form-check-radio form-check-inline">
                                                     <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option1">                                                        1
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                            value="option1"> 1
                                                         <span class="circle">
                                                             <span class="check"></span>
                                                         </span>
@@ -178,7 +253,8 @@
                                                 </div>
                                                 <div class="form-check form-check-radio form-check-inline">
                                                     <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option2">                                                        2
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                            value="option2"> 2
                                                         <span class="circle">
                                                             <span class="check"></span>
                                                         </span>
@@ -186,7 +262,8 @@
                                                 </div>
                                                 <div class="form-check form-check-radio form-check-inline disabled">
                                                     <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option3" disabled>                                                        3
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                            value="option3" disabled> 3
                                                         <span class="circle">
                                                             <span class="check"></span>
                                                         </span>
@@ -222,39 +299,48 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="alert alert-default" role="alert">
-                                A simple default alert with <a href="#" class="alert-link">an example link</a>. Give it a
+                                A simple default alert with <a href="#" class="alert-link">an example link</a>. Give it
+                                a
                                 click if you like.
                             </div>
                             <div class="alert alert-primary" role="alert">
-                                A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a
+                                A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it
+                                a
                                 click if you like.
                             </div>
                             <div class="alert alert-secondary" role="alert">
-                                A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it
+                                A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give
+                                it
                                 a click if you like.
                             </div>
                             <div class="alert alert-success" role="alert">
-                                A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a
+                                A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it
+                                a
                                 click if you like.
                             </div>
                             <div class="alert alert-danger" role="alert">
-                                A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a
+                                A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it
+                                a
                                 click if you like.
                             </div>
                             <div class="alert alert-warning" role="alert">
-                                A simple warning alert with <a href="#" class="alert-link">an example link</a>. Give it a
+                                A simple warning alert with <a href="#" class="alert-link">an example link</a>. Give it
+                                a
                                 click if you like.
                             </div>
                             <div class="alert alert-info" role="alert">
-                                A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a click
+                                A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a
+                                click
                                 if you like.
                             </div>
                             <div class="alert alert-light" role="alert">
-                                A simple light alert with <a href="#" class="alert-link">an example link</a>. Give it a click
+                                A simple light alert with <a href="#" class="alert-link">an example link</a>. Give it a
+                                click
                                 if you like.
                             </div>
                             <div class="alert alert-dark" role="alert">
-                                A simple dark alert with <a href="#" class="alert-link">an example link</a>. Give it a click
+                                A simple dark alert with <a href="#" class="alert-link">an example link</a>. Give it a
+                                click
                                 if you like.
                             </div>
                             <button type="button" class="btn btn-primary">
@@ -296,8 +382,8 @@
                             <hr>
                             <div>
                                 <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Dropdown button
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -308,7 +394,8 @@
                                 </div>
                                 <hr>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         Action
                                     </button>
                                     <div class="dropdown-menu">
@@ -322,8 +409,8 @@
                                 <!-- Example split danger button -->
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-danger">Action</button>
-                                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
+                                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div class="dropdown-menu">
@@ -336,7 +423,8 @@
                                 </div>
                                 <!-- Default dropup button -->
                                 <div class="btn-group dropup">
-                                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         Dropup
                                     </button>
                                     <div class="dropdown-menu">
@@ -353,8 +441,8 @@
                                     <button type="button" class="btn btn-secondary">
                                         Split dropup
                                     </button>
-                                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div class="dropdown-menu">
@@ -403,27 +491,42 @@
                                     <div class="card-body ">
                                         <div class="tab-content text-center">
                                             <div class="tab-pane active" id="home">
-                                                <p>I think that&#x2019;s a responsibility that I have, to push possibilities,
-                                                    to show people, this is the level that things could be at. So when you
-                                                    get something that has the name Kanye West on it, it&#x2019;s supposed
-                                                    to be pushing the furthest possibilities. I will be the leader of a company
-                                                    that ends up being worth billions of dollars, because I got the answers.
+                                                <p>I think that&#x2019;s a responsibility that I have, to push
+                                                    possibilities,
+                                                    to show people, this is the level that things could be at. So when
+                                                    you
+                                                    get something that has the name Kanye West on it, it&#x2019;s
+                                                    supposed
+                                                    to be pushing the furthest possibilities. I will be the leader of a
+                                                    company
+                                                    that ends up being worth billions of dollars, because I got the
+                                                    answers.
                                                     I understand culture. I am the nucleus.</p>
                                             </div>
                                             <div class="tab-pane" id="updates">
-                                                <p> I will be the leader of a company that ends up being worth billions of
-                                                    dollars, because I got the answers. I understand culture. I am the nucleus.
-                                                    I think that&#x2019;s a responsibility that I have, to push possibilities,
-                                                    to show people, this is the level that things could be at. I think that&#x2019;s
-                                                    a responsibility that I have, to push possibilities, to show people,
+                                                <p> I will be the leader of a company that ends up being worth billions
+                                                    of
+                                                    dollars, because I got the answers. I understand culture. I am the
+                                                    nucleus.
+                                                    I think that&#x2019;s a responsibility that I have, to push
+                                                    possibilities,
+                                                    to show people, this is the level that things could be at. I think
+                                                    that&#x2019;s
+                                                    a responsibility that I have, to push possibilities, to show
+                                                    people,
                                                     this is the level that things could be at. </p>
                                             </div>
                                             <div class="tab-pane" id="history">
-                                                <p> I think that&#x2019;s a responsibility that I have, to push possibilities,
-                                                    to show people, this is the level that things could be at. I will be
-                                                    the leader of a company that ends up being worth billions of dollars,
-                                                    because I got the answers. I understand culture. I am the nucleus. I
-                                                    think that&#x2019;s a responsibility that I have, to push possibilities,
+                                                <p> I think that&#x2019;s a responsibility that I have, to push
+                                                    possibilities,
+                                                    to show people, this is the level that things could be at. I will
+                                                    be
+                                                    the leader of a company that ends up being worth billions of
+                                                    dollars,
+                                                    because I got the answers. I understand culture. I am the nucleus.
+                                                    I
+                                                    think that&#x2019;s a responsibility that I have, to push
+                                                    possibilities,
                                                     to show people, this is the level that things could be at.</p>
                                             </div>
                                         </div>
@@ -433,37 +536,46 @@
                                 <hr>
                                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist" aria-expanded="true">
+                                        <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist"
+                                            aria-expanded="true">
                                             Profile
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#link2" role="tablist" aria-expanded="false">
+                                        <a class="nav-link" data-toggle="tab" href="#link2" role="tablist"
+                                            aria-expanded="false">
                                             Settings
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#link3" role="tablist" aria-expanded="false">
+                                        <a class="nav-link" data-toggle="tab" href="#link3" role="tablist"
+                                            aria-expanded="false">
                                             Options
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content tab-space">
                                     <div class="tab-pane active" id="link1" aria-expanded="true">
-                                        Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed
+                                        Collaboratively administrate empowered markets via plug-and-play networks.
+                                        Dynamically procrastinate B2C users after installed
                                         base benefits.
-                                        <br><br> Dramatically visualize customer directed convergence without revolutionary
+                                        <br><br> Dramatically visualize customer directed convergence without
+                                        revolutionary
                                         ROI.
                                     </div>
                                     <div class="tab-pane" id="link2" aria-expanded="false">
-                                        Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time
+                                        Efficiently unleash cross-media information without cross-media value. Quickly
+                                        maximize timely deliverables for real-time
                                         schemas.
-                                        <br><br>Dramatically maintain clicks-and-mortar solutions without functional solutions.
+                                        <br><br>Dramatically maintain clicks-and-mortar solutions without functional
+                                        solutions.
                                     </div>
                                     <div class="tab-pane" id="link3" aria-expanded="false">
-                                        Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer
+                                        Completely synergize resource taxing relationships via premier niche markets.
+                                        Professionally cultivate one-to-one customer
                                         service with robust ideas.
-                                        <br><br>Dynamically innovate resource-leveling customer service for state of the
+                                        <br><br>Dynamically innovate resource-leveling customer service for state of
+                                        the
                                         art customer service.
                                     </div>
                                 </div>
@@ -511,11 +623,13 @@
                                 <button type="button" class="list-group-item list-group-item-action active">
                                     Cras justo odio
                                 </button>
-                                <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis
+                                <button type="button" class="list-group-item list-group-item-action">Dapibus ac
+                                    facilisis
                                     in
                                 </button>
                                 <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                                <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur
+                                <button type="button" class="list-group-item list-group-item-action">Porta ac
+                                    consectetur
                                     ac
                                 </button>
                                 <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum
@@ -535,7 +649,8 @@
 
 
                                 <li class="list-group-item list-group-item-primary">A simple primary list group item</li>
-                                <li class="list-group-item list-group-item-secondary">A simple secondary list group item</li>
+                                <li class="list-group-item list-group-item-secondary">A simple secondary list group
+                                    item</li>
                                 <li class="list-group-item list-group-item-success">A simple success list group item</li>
                                 <li class="list-group-item list-group-item-danger">A simple danger list group item</li>
                                 <li class="list-group-item list-group-item-warning">A simple warning list group item</li>
@@ -548,21 +663,29 @@
                                 <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
 
 
-                                <a href="#" class="list-group-item list-group-item-action list-group-item-primary">A simple
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-primary">A
+                                    simple
                                     primary list group item</a>
-                                <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">A simple
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">A
+                                    simple
                                     secondary list group item</a>
-                                <a href="#" class="list-group-item list-group-item-action list-group-item-success">A simple
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-success">A
+                                    simple
                                     success list group item</a>
-                                <a href="#" class="list-group-item list-group-item-action list-group-item-danger">A simple
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-danger">A
+                                    simple
                                     danger list group item</a>
-                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">A simple
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">A
+                                    simple
                                     warning list group item</a>
-                                <a href="#" class="list-group-item list-group-item-action list-group-item-info">A simple
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-info">A
+                                    simple
                                     info list group item</a>
-                                <a href="#" class="list-group-item list-group-item-action list-group-item-light">A simple
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-light">A
+                                    simple
                                     light list group item</a>
-                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">A simple
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">A
+                                    simple
                                     dark list group item</a>
                             </div>
                             <hr>
@@ -587,7 +710,8 @@
                                         <h5 class="mb-1">List group item heading</h5>
                                         <small>3 days ago</small>
                                     </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+                                        eget
                                         risus varius blandit.</p>
                                     <small>Donec id elit non mi porta.</small>
                                 </a>
@@ -596,7 +720,8 @@
                                         <h5 class="mb-1">List group item heading</h5>
                                         <small class="text-muted">3 days ago</small>
                                     </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+                                        eget
                                         risus varius blandit.</p>
                                     <small class="text-muted">Donec id elit non mi porta.</small>
                                 </a>
@@ -605,7 +730,8 @@
                                         <h5 class="mb-1">List group item heading</h5>
                                         <small class="text-muted">3 days ago</small>
                                     </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+                                        eget
                                         risus varius blandit.</p>
                                     <small class="text-muted">Donec id elit non mi porta.</small>
                                 </a>
@@ -614,19 +740,20 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="list-group" id="list-tab" role="tablist">
-                                        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab"
-                                            aria-controls="home">Home</a>
-                                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab"
-                                            aria-controls="profile">Profile</a>
-                                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab"
-                                            aria-controls="messages">Messages</a>
-                                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab"
-                                            aria-controls="settings">Settings</a>
+                                        <a class="list-group-item list-group-item-action active" id="list-home-list"
+                                            data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+                                        <a class="list-group-item list-group-item-action" id="list-profile-list"
+                                            data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+                                        <a class="list-group-item list-group-item-action" id="list-messages-list"
+                                            data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+                                        <a class="list-group-item list-group-item-action" id="list-settings-list"
+                                            data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
                                     </div>
                                 </div>
                                 <div class="col-8">
                                     <div class="tab-content" id="nav-tabContent">
-                                        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+                                        <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                                            aria-labelledby="list-home-list">...</div>
                                         <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
                                         <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
                                         <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
@@ -635,10 +762,14 @@
                             </div>
                             <hr>
                             <div class="list-group" id="myList" role="tablist">
-                                <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a>
-                                <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Profile</a>
-                                <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Messages</a>
-                                <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab">Settings</a>
+                                <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home"
+                                    role="tab">Home</a>
+                                <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile"
+                                    role="tab">Profile</a>
+                                <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages"
+                                    role="tab">Messages</a>
+                                <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings"
+                                    role="tab">Settings</a>
                             </div>
 
                             <!-- Tab panes -->
@@ -650,16 +781,20 @@
                             </div>
                             <hr>
                             <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 75%"
+                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%"
+                                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <hr>
                             <h1>h1. Bootstrap heading</h1>
@@ -682,7 +817,8 @@
                             <h1 class="display-4">Display 4</h1>
                             <hr>
                             <p class="lead">
-                                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+                                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est
+                                non commodo luctus.
                             </p>
                         </div>
                     </div>
@@ -864,7 +1000,8 @@
                                 <div class="form-group">
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value=""> Option one is this
+                                            <input class="form-check-input" type="checkbox" value=""> Option one is
+                                            this
                                             <span class="form-check-sign">
                                                 <span class="check"></span>
                                             </span>
@@ -895,7 +1032,8 @@
                                 </div>
                                 <div class="form-group mx-sm-3 mb-2">
                                     <label for="inputPassword2" class="sr-only">Password</label>
-                                    <input type="text" class="form-control" id="inputPassword2" placeholder="Password" autocomplete="off">
+                                    <input type="text" class="form-control" id="inputPassword2" placeholder="Password"
+                                        autocomplete="off">
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-round btn-md mb-2">Confirm identity</button>
                             </div>
@@ -940,7 +1078,8 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Password</label>
                                             <div class="col-sm-10">
-                                                <input type="password" class="form-control" placeholder="Password" autocomplete="off">
+                                                <input type="password" class="form-control" placeholder="Password"
+                                                    autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -998,7 +1137,8 @@
                                 <div class="form-group">
                                     <label for="exampleFormControlSelect2">Example multiple select</label>
                                     <div>
-                                        <select multiple class="selectpicker show-tick" data-size="5" data-style="btn-select" id="exampleFormControlSelect2">
+                                        <select multiple class="selectpicker show-tick" data-size="5" data-style="btn-select"
+                                            id="exampleFormControlSelect2">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -1027,8 +1167,10 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                        placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                                        with
                                         anyone else.
                                     </small>
                                 </div>
@@ -1057,13 +1199,15 @@
                                     <div class="col-md">
                                         <div class="form-group">
                                             <label for="firstname">First name</label>
-                                            <input type="text" class="form-control" placeholder="Enter your first name..." id="firstname" name="firstname" />
+                                            <input type="text" class="form-control" placeholder="Enter your first name..."
+                                                id="firstname" name="firstname" />
                                         </div>
                                     </div>
                                     <div class="col-md">
                                         <div class="form-group">
                                             <label for="lastname">Last name</label>
-                                            <input type="text" class="form-control" placeholder="Enter your last name..." id="lastname" name="lastname" />
+                                            <input type="text" class="form-control" placeholder="Enter your last name..."
+                                                id="lastname" name="lastname" />
                                         </div>
                                     </div>
                                     <div class="col-md">
@@ -1098,7 +1242,8 @@
                                         <div class="form-group">
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox" id="agree" name="agree" value="agree">                                                    Please
+                                                    <input class="form-check-input" type="checkbox" id="agree" name="agree"
+                                                        value="agree"> Please
                                                     agree to our policy
                                                     <span class="form-check-sign">
                                                         <span class="check"></span>
@@ -1129,14 +1274,15 @@
                                 <form id="user-search-form">
                                     <div class="row">
                                         <div class="col-md">
-                                            <div class="form-group mat-form-group" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                            <div class="form-group mat-form-group" data-toggle="tooltip" data-placement="top"
+                                                title="Tooltip on top">
                                                 <label class="label-floating">Name</label>
                                                 <input class="form-control" value="Name" required>
                                             </div>
                                         </div>
                                         <div class="col-md">
-                                            <div class="form-group mat-form-group" data-container="body" data-trigger="focus" data-toggle="popover" data-placement="top"
-                                                data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                            <div class="form-group mat-form-group" data-container="body" data-trigger="focus"
+                                                data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
                                                 <label class="label-floating">Email</label>
                                                 <input class="form-control" required>
                                             </div>
@@ -1160,7 +1306,8 @@
                                                 <label for="auction_id"> Checkbox </label>
                                                 <div class="form-check">
                                                     <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value=""> Option
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        Option
                                                         <span class="form-check-sign">
                                                             <span class="check"></span>
                                                         </span>
@@ -1174,7 +1321,8 @@
                                                 <div>
                                                     <div class="form-check form-check-radio form-check-inline">
                                                         <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">                                                            1
+                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                                id="inlineRadio1" value="option1"> 1
                                                             <span class="circle">
                                                                 <span class="check"></span>
                                                             </span>
@@ -1182,7 +1330,8 @@
                                                     </div>
                                                     <div class="form-check form-check-radio form-check-inline">
                                                         <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">                                                            2
+                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                                id="inlineRadio2" value="option2"> 2
                                                             <span class="circle">
                                                                 <span class="check"></span>
                                                             </span>
@@ -1190,7 +1339,8 @@
                                                     </div>
                                                     <div class="form-check form-check-radio form-check-inline disabled">
                                                         <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>                                                            3
+                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                                id="inlineRadio3" value="option3" disabled> 3
                                                             <span class="circle">
                                                                 <span class="check"></span>
                                                             </span>
@@ -1204,7 +1354,8 @@
                                                 <label class="bmd-label-floating">Switch</label>
                                                 <div>
                                                     <span class="switcher">
-                                                        <label><input type="checkbox" id="Name" checked="checked"> Sushil
+                                                        <label><input type="checkbox" id="Name" checked="checked">
+                                                            Sushil
                                                         </label>
                                                     </span>
                                                 </div>
@@ -1245,8 +1396,10 @@
                             <div class="bd-callout bd-callout-info">
                                 <p>The base
                                     <code class="highlighter-rouge">.nav</code> component does not include any
-                                    <code class="highlighter-rouge">.active</code> state. The following examples include
-                                    the class, mainly to demonstrate that this particular class does not trigger any special
+                                    <code class="highlighter-rouge">.active</code> state. The following examples
+                                    include
+                                    the class, mainly to demonstrate that this particular class does not trigger any
+                                    special
                                     styling.
                                 </p>
                             </div>
@@ -1287,7 +1440,8 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1321,6 +1475,37 @@
             </div>
         </div>
     </div>
+    <div id="bottom-sheet" class="bottomsheet">
+        <aside class="social" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+            <a class="btn-close" aria-hidden="true" data-dismiss="bottomsheet">Close</a>
+            <ul class="menu">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Reddit</a></li>
+                <li><a href="#">WhatsApp</a></li>
+                <li><a href="#">E-mail</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Reddit</a></li>
+                <li><a href="#">WhatsApp</a></li>
+                <li><a href="#">E-mail</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Reddit</a></li>
+                <li><a href="#">WhatsApp</a></li>
+                <li><a href="#">E-mail</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Reddit</a></li>
+                <li><a href="#">WhatsApp</a></li>
+                <li><a href="#">E-mail</a></li>
+            </ul>
+        </aside>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -1333,6 +1518,15 @@
     <script src="js/common.js"></script>
     <script>
         $(document).ready(function () {
+            $(document).on('click', '[data-toggle="bottomsheet"]', function () {
+                $($(this).attr('data-target')).toggleClass('show');
+            });
+
+            $(document).on('click', '[data-dismiss="bottomsheet"]', function () {
+                $('.bottomsheet').removeClass('show');
+            });
+
+            // <a data-toggle="bottomsheet" data-target="#bottom-sheet">Sushil Kumar</a>
             $('#inputPassword4').datetimepicker({
                 format: "DD/MM/YYYY",
                 defaultDate: new Date(),

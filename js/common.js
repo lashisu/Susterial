@@ -25,7 +25,6 @@ $(document).ready(function () {
         $('.swal2-warning').show().removeClass('pulse-warning');
     });
 
-
     $(document).on('click', '.navbar-toggler', function () {
         if ($(this).hasClass('toggled')) {
             $('html').removeClass('nav-open');

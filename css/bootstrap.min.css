@@ -8357,78 +8357,11 @@
   }
   
   /* Perfect Scroll Bar */
-  .ps {
-    overflow: hidden !important;
-    overflow-anchor: none;
-    -ms-overflow-style: none;
-    touch-action: auto;
-    -ms-touch-action: auto;
-  }
-  
-  .ps__rail-x {
-    display: none;
-    opacity: 0;
-    height: 15px;
-    bottom: 0px;
-    position: absolute;
-  }
-  
-  .ps__rail-y {
-    display: none;
-    opacity: 0;
-    width: 15px;
-    right: 0;
-    position: absolute;
-  }
-  
-  .ps--active-x > .ps__rail-x,
-  .ps--active-y > .ps__rail-y {
-    display: block;
-    background-color: transparent;
-  }
-  
-  .ps:hover > .ps__rail-x,
-  .ps:hover > .ps__rail-y,
-  .ps--focus > .ps__rail-x,
-  .ps--focus > .ps__rail-y,
-  .ps--scrolling-x > .ps__rail-x,
-  .ps--scrolling-y > .ps__rail-y {
-    opacity: 0.6;
-  }
-  
-  .ps__thumb-x {
-    background-color: #aaa;
-    border-radius: 6px;
-    transition: background-color .2s linear, height .2s ease-in-out;
-    -webkit-transition: background-color .2s linear, height .2s ease-in-out;
-    height: 6px;
-    bottom: 2px;
-    position: absolute;
-  }
-  
-  .ps__thumb-y {
-    background-color: #aaa;
-    border-radius: 6px;
-    transition: background-color .2s linear, width .2s ease-in-out;
-    -webkit-transition: background-color .2s linear, width .2s ease-in-out;
-    width: 6px;
-    right: 2px;
-    position: absolute;
-  }
-  
-  .ps__rail-x:hover > .ps__thumb-x,
-  .ps__rail-x:focus > .ps__thumb-x,
-  .ps__rail-x.ps--clicking .ps__thumb-x {
-    background-color: #999;
-    height: 11px;
-  }
-  
-  .ps__rail-y:hover > .ps__thumb-y,
-  .ps__rail-y:focus > .ps__thumb-y,
-  .ps__rail-y.ps--clicking .ps__thumb-y {
-    background-color: #999;
-    width: 11px;
-  }
+  /*!
+ * Scrollbox v4.0.0
+ * (c) 2013-2017, Max Invis1ble
+ * Licensed under MIT (https://opensource.org/licenses/mit-license.php)
+ */.scrollbox-horizontal-bar,.scrollbox-wrapper>:first-child{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden}.scrollbox-wrapper{position:relative}.scrollbox-wrapper .scrollbox-overflowed{overflow:hidden}.scrollbox-wrapper>:first-child{backface-visibility:hidden;will-change:scroll-position}.scrollbox-bar,.scrollbox-rail{display:none;position:absolute;z-index:10}.scrollbox-horizontal-bar,.scrollbox-horizontal-rail{bottom:0;left:0}.scrollbox-vertical-bar,.scrollbox-vertical-rail{top:0;right:0}.scrollbox-bar-in,.scrollbox-rail-in{display:block}.scrollbox-horizontal-bar{backface-visibility:hidden;will-change:left;min-width:20px;height:7px}.scrollbox-vertical-bar{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;will-change:top;min-height:20px;width:7px}.scrollbox-rail{background-color:#000;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=3)";filter:alpha(opacity=3);-moz-opacity:.03;-khtml-opacity:.03;opacity:.03}.scrollbox-bar{background-color:#ccc;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.scrollbox-bar:hover{background-color:#999}.scrollbox-bar.scrollbox-bar-captured{background-color:#666}.scrollbox-horizontal-rail{height:7px}.scrollbox-vertical-rail{width:7px}
   
   
   /* Loader Animated Circle */
@@ -9409,11 +9342,9 @@
   .sidebar .sidebar-wrapper {
      position: relative;
      height: calc(100vh - 70px);
-     overflow-y: auto;
-     overflow-x: hidden;
+     overflow: hidden;
      width: 260px;
      z-index: 4;
-     padding-bottom: 15px;
   }
   .sidebar .user {
      padding-bottom: 15px;
@@ -9606,13 +9537,12 @@
   .main-panel>.navbar {
      margin-bottom: 0;
   }
-  .main-panel>.content {
+  .main-panel .content {
      position: relative;
      margin-top: 60px;
      padding: 0 15px 15px;
      height: calc(100vh - 60px);
-     overflow-x: hidden;
-     overflow-y: auto;
+     overflow: hidden
   }
   .main-panel, .sidebar, .sidebar-wrapper {
      transition-property: top,bottom,width;
@@ -11082,5 +11012,3 @@
   body[data-color=info] .switcher input[type=checkbox]:checked:active:after {
    box-shadow: 0 1px 3px 1px rgba(0,0,0,.4), 0 0 0 15px rgba(0,188,212,.1);
   }
-  
-  .form-control:invalid
